@@ -1,0 +1,388 @@
+<meta name="robots" content="noindex, nofollow">
+<title>Arthaarthee Sketch Wireframe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap">
+<style>
+/* Layout: low-fidelity, clickable wireframe — light monochrome boxes, clean sans labels, everything folded behind tabs and disclosures (single light theme by choice) */
+:root{
+  --bg:#f7f7f5; --paper:#ffffff; --ink:#1f1f1f; --muted:#7a7a76; --line:#dcdcd7; --fill:#f2f2ef; --hi:#f6efd9;
+  --hand:'Raleway',system-ui,sans-serif; --body:'Manrope',system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.site{max-width:980px;margin:24px auto 60px;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.lbl,.tagline,.step b,.tab,nav a,.note{letter-spacing:.04em}
+.lbl{text-transform:uppercase;font-size:11px!important;font-weight:600}
+.card,details,.step,.tab,.btn,.logo,.ico{border-width:1.5px!important}
+.card:not(.soft),details,.step{border-color:#c9c9c3!important}
+.hand{font-family:var(--hand)}
+.bar{display:flex;gap:6px;padding:8px 12px;border-bottom:2px solid var(--ink);background:var(--fill)}
+.bar i{width:10px;height:10px;border:1.5px solid var(--ink);border-radius:50%}
+.bar span{margin-left:8px;font:12px var(--hand);color:var(--muted)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1.5px dashed var(--line);padding:12px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{width:54px;height:54px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:11px/1.1 var(--hand);text-align:center}
+nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+nav a{font:15px var(--hand);color:var(--ink);text-decoration:none;padding:4px 10px;border-radius:6px}
+nav a.on{background:var(--hi)}
+nav a:focus-visible,.btn:focus-visible,summary:focus-visible,.tab:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.btn{display:inline-block;font:600 13px var(--body);padding:9px 16px;border:2px solid var(--ink);border-radius:6px;background:var(--paper);color:var(--ink);text-decoration:none;cursor:pointer}
+.btn.p{background:var(--ink);color:var(--paper)}
+main{padding:0 20px}
+section{padding:36px 0;border-bottom:1.5px dashed var(--line);display:flex;flex-direction:column;gap:14px}
+section:last-child{border-bottom:0}
+.lbl{font:13px var(--hand);color:var(--muted)}
+.lbl::before{content:"// "}
+h1{font:700 clamp(1.7rem,4.5vw,2.5rem)/1.15 var(--body);max-width:20ch;text-wrap:balance;margin:0}
+h2{font:600 1.35rem/1.25 var(--body);margin:0;text-wrap:balance}
+h3{font:600 1rem var(--body);margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+.lead{color:var(--muted);max-width:56ch}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.img{border:2px solid var(--line);border-radius:6px;background:linear-gradient(to top right,transparent calc(50% - 1px),var(--line) 50%,transparent calc(50% + 1px)),linear-gradient(to bottom right,transparent calc(50% - 1px),var(--line) 50%,transparent calc(50% + 1px));min-height:120px;display:grid;place-items:center}
+.img span{background:var(--paper);padding:2px 8px;font:13px var(--hand);color:var(--muted)}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{border:2px solid var(--ink);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card.soft{border-color:var(--line)}
+.ico{width:28px;height:28px;border:2px solid var(--ink);border-radius:6px}
+.tagline{font:700 13px var(--hand);letter-spacing:.12em}
+details{border:2px solid var(--ink);border-radius:8px;background:var(--paper)}
+details+details{margin-top:8px}
+summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:700 18px var(--hand)}
+details[open] summary::after{content:"–"}
+summary small{display:block;color:var(--muted);font-size:13px;font-weight:400}
+.dbody{padding:0 14px 14px;display:grid;gap:12px}
+.dbody ul{margin:4px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;align-items:stretch}
+.step{border:2px solid var(--ink);border-radius:8px;padding:10px;position:relative}
+.step b{font:700 15px var(--hand);display:block}
+.step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font:700 16px var(--hand);background:var(--paper)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font:14px var(--hand);border:2px solid var(--ink);border-radius:20px;padding:4px 14px;background:var(--paper);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:13px;border:1.5px solid var(--line);border-radius:20px;padding:3px 10px;color:var(--muted)}
+.field{border:2px solid var(--line);border-radius:6px;padding:9px 10px;font-size:13px;color:var(--muted)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.form .w{grid-column:1/-1}
+.ta{height:80px}
+.note{background:var(--hi);font:13px var(--hand);padding:6px 10px;border-radius:4px;align-self:flex-start}
+footer{background:var(--fill);border-top:2px solid var(--ink);padding:20px;display:grid;gap:10px;font-size:13px}
+footer .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.legend{max-width:980px;margin:0 auto;font:14px var(--hand);color:var(--muted);display:flex;gap:16px;flex-wrap:wrap;padding-top:20px}
+[data-page]{display:none}
+[data-page].show{display:block}
+/* responsive */
+main{padding:0 clamp(16px,4vw,32px)}
+header{padding:12px clamp(16px,4vw,32px)}
+.split{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.menu{display:none;margin-left:auto;font:600 13px var(--body);border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:8px 12px;cursor:pointer}
+summary h3,summary small{overflow-wrap:anywhere}
+@media (max-width:960px){
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}
+  .step::after{display:none}
+}
+@media (max-width:760px){
+  .site{margin:12px auto 32px;border-radius:8px}
+  .menu{display:block}
+  header .btn{display:none}
+  nav{display:none;flex-basis:100%;flex-direction:column;gap:2px;padding-top:8px;border-top:1px solid var(--line)}
+  nav.open{display:flex}
+  nav a{padding:10px 8px;font-size:16px}
+  .logo{width:46px;height:46px;font-size:10px}
+  .g2,.g3,.g4,.form,.split,footer .cols{grid-template-columns:1fr}
+  .form .w{grid-column:auto}
+  .steps{grid-template-columns:1fr;row-gap:16px}
+  .step{display:flex;gap:10px;align-items:baseline}
+  .step::after{display:block!important;content:"↓";right:auto;left:20px;top:auto;bottom:-15px;transform:none}
+  .step:last-child::after{display:none!important}
+  section{padding:26px 0}
+  .row .btn{flex:1 1 100%;text-align:center}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+  .tab{flex:0 0 auto}
+  .img{min-height:96px}
+  .legend{font-size:12px}
+}
+@media (prefers-reduced-motion:no-preference){details[open] .dbody{animation:f .2s ease}@keyframes f{from{opacity:.3}}}
+</style>
+
+<div class="legend"><span>✎ sketch stage — information &amp; structure only, no visual skin</span><span>▢ = box · ✕ = image · + = folded content</span></div>
+
+<div class="site">
+  <div class="bar"><i></i><i></i><i></i><span>arthaarthee.com</span></div>
+  <header>
+    <a href="#home" class="logo" style="color:inherit;text-decoration:none" aria-label="Home">LOGO<br>+ name</a>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#industries">Industries</a><a href="#insights">Insights</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn p" href="#contact">Talk to us</a>
+  </header>
+
+  <main>
+  <!-- ================= HOME ================= -->
+  <div data-page="home">
+    <section>
+      <div class="lbl">hero</div>
+      <div class="tagline">INSIGHTS | STRUCTURE | GOVERNANCE</div>
+      <h1>Better financial decisions build stronger businesses.</h1>
+      <p class="lead">Business finance, transaction and governance advisory for growing companies and institutions.</p>
+      <div class="row"><a class="btn p" href="#contact">Discuss your requirements</a><a class="btn" href="#services">View services</a></div>
+      <div class="img"><span>abstract structural visual</span></div>
+    </section>
+
+    <section>
+      <div class="lbl">what we stand for — 3 words, 1 line each</div>
+      <div class="grid g3">
+        <div class="card"><div class="ico"></div><h3>Insights</h3><p class="muted">Numbers you can decide with.</p></div>
+        <div class="card"><div class="ico"></div><h3>Structure</h3><p class="muted">Systems and entities built to scale.</p></div>
+        <div class="card"><div class="ico"></div><h3>Governance</h3><p class="muted">Controls that hold up under scrutiny.</p></div>
+      </div>
+      <p class="muted">→ Enabling sustainable growth.</p>
+    </section>
+
+    <section>
+      <div class="lbl">sound familiar? — visitor self-identifies</div>
+      <h2>Growth brings complexity. Accounting alone doesn't solve it.</h2>
+      <div class="grid g4">
+        <div class="card soft"><h3>Lots of reports, little insight</h3></div>
+        <div class="card soft"><h3>Sales up, cash still tight</h3></div>
+        <div class="card soft"><h3>Big decision ahead: funding, deal, expansion</h3></div>
+        <div class="card soft"><h3>Controls haven't kept pace</h3></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="lbl">services — 4 cards, 3 items each, details live on Services</div>
+      <h2>What we do</h2>
+      <div class="grid g2">
+        <a class="card" href="#services" style="color:inherit;text-decoration:none"><h3>Business Finance &amp; Virtual CFO</h3><p class="muted">Virtual CFO · Budgets &amp; forecasts · Cash &amp; working capital</p></a>
+        <a class="card" href="#services" style="color:inherit;text-decoration:none"><h3>Transactions &amp; Corporate Finance</h3><p class="muted">Due diligence · Fundraising · Models &amp; valuation support</p></a>
+        <a class="card" href="#services" style="color:inherit;text-decoration:none"><h3>Risk, Audit &amp; Governance</h3><p class="muted">Internal audit · Controls · Governance frameworks</p></a>
+        <a class="card" href="#services" style="color:inherit;text-decoration:none"><h3>Structuring &amp; Institutions</h3><p class="muted">Entity structuring · Startups · NGOs &amp; CSR</p></a>
+      </div>
+      <div class="chips"><span class="lbl" style="margin-right:4px">also:</span><span class="chip">Accounting</span><span class="chip">Tax &amp; GST</span><span class="chip">Compliance</span><span class="chip">Finance tech</span><span class="chip">IP</span></div>
+    </section>
+
+    <section>
+      <div class="lbl">who we work with — chips, link to Industries</div>
+      <div class="chips"><span class="chip">SMEs</span><span class="chip">Manufacturing &amp; trading</span><span class="chip">Construction &amp; real estate</span><span class="chip">Startups &amp; tech</span><span class="chip">Healthcare &amp; services</span><span class="chip">NGOs &amp; institutions</span></div>
+      <a href="#industries" class="hand" style="color:inherit">see how we help each →</a>
+    </section>
+
+    <section>
+      <div class="lbl">how we work — real sequence</div>
+      <div class="steps">
+        <div class="step"><b>Understand</b><span class="muted">your business</span></div>
+        <div class="step"><b>Diagnose</b><span class="muted">gaps &amp; risks</span></div>
+        <div class="step"><b>Design</b><span class="muted">the fix</span></div>
+        <div class="step"><b>Implement</b><span class="muted">with you</span></div>
+        <div class="step"><b>Review</b><span class="muted">&amp; refine</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="lbl">closing CTA</div>
+      <h2>Let's talk about your business.</h2>
+      <div class="row"><a class="btn p" href="#contact">Discuss your requirements</a></div>
+    </section>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <div data-page="about">
+    <section>
+      <div class="lbl">page intro</div>
+      <h1>Finance should do more than keep the books.</h1>
+      <p class="lead">A Bengaluru advisory firm (est. 2021) helping businesses and institutions decide better, build sound structures and grow sustainably.</p>
+    </section>
+    <section>
+      <div class="lbl">philosophy — folded, open one at a time</div>
+      <details open><summary><h3>Insights</h3></summary><div class="dbody"><p class="muted">Reliable information and real analysis come before every good decision.</p></div></details>
+      <details><summary><h3>Structure</h3></summary><div class="dbody"><p class="muted">Sustainable organisations rest on sound systems, processes and entities.</p></div></details>
+      <details><summary><h3>Governance</h3></summary><div class="dbody"><p class="muted">Accountability, controls and compliance protect long-term value.</p></div></details>
+    </section>
+    <section>
+      <div class="lbl">team — verified people only</div>
+      <div class="grid g3">
+        <div class="card soft"><div class="img" style="min-height:90px"><span>photo</span></div><h3>Name</h3><p class="muted">Qualification · focus area</p></div>
+        <div class="card soft"><div class="img" style="min-height:90px"><span>photo</span></div><h3>Name</h3><p class="muted">Qualification · focus area</p></div>
+        <div class="card soft"><div class="img" style="min-height:90px"><span>photo</span></div><h3>Name</h3><p class="muted">Qualification · focus area</p></div>
+      </div>
+      <p class="muted">Network: Chartered Accountants, Advocates and finance professionals.</p>
+    </section>
+    <section>
+      <div class="lbl">values — 3 max</div>
+      <div class="chips"><span class="chip">Integrity</span><span class="chip">Financial discipline</span><span class="chip">Long-term view</span></div>
+      <span class="note">vision &amp; mission: add when management writes them</span>
+    </section>
+  </div>
+
+  <!-- ================= SERVICES ================= -->
+  <div data-page="services">
+    <section>
+      <div class="lbl">page intro</div>
+      <h1>Four areas. One integrated view.</h1>
+      <p class="lead">Open any area to see what's included. Each item is a conversation we can start.</p>
+    </section>
+    <section>
+      <div class="lbl">level 1 = area · level 2 = group · level 3 = items</div>
+
+      <details open><summary><span><h3>Business Finance &amp; Virtual CFO</h3><small>Financial discipline and visibility for growing businesses</small></span></summary>
+        <div class="dbody grid g2">
+          <div><b>Virtual CFO</b><ul><li>Outsourced CFO</li><li>Monthly reviews &amp; MIS</li><li>Decision support</li></ul></div>
+          <div><b>Planning &amp; analysis</b><ul><li>Budgets &amp; forecasts</li><li>Variance &amp; scenario analysis</li><li>Financial modelling</li></ul></div>
+          <div><b>Cash &amp; working capital</b><ul><li>Cash flow forecasting</li><li>Receivables, payables, inventory</li><li>Liquidity planning</li></ul></div>
+          <div><b>Profitability &amp; finance function</b><ul><li>Product / segment margins</li><li>Cost &amp; pricing review</li><li>Month-end close &amp; SOPs</li></ul></div>
+        </div></details>
+
+      <details><summary><span><h3>Transactions &amp; Corporate Finance</h3><small>Funding, deals and capital decisions</small></span></summary>
+        <div class="dbody grid g2">
+          <div><b>Transactions</b><ul><li>Due diligence support</li><li>Buy-side / sell-side support</li><li>Deal structuring</li></ul></div>
+          <div><b>Fundraising</b><ul><li>Readiness assessment</li><li>Projections &amp; investor financials</li><li>Debt readiness</li></ul></div>
+          <div><b>Models &amp; valuation support</b><ul><li>Integrated &amp; DCF models</li><li>Project models</li><li>Sensitivity analysis</li></ul></div>
+          <div><b>Corporate finance</b><ul><li>Capital structure</li><li>Debt restructuring</li><li>Feasibility &amp; investment appraisal</li></ul></div>
+        </div></details>
+
+      <details><summary><span><h3>Risk, Internal Audit &amp; Governance</h3><small>Controls and accountability that scale</small></span></summary>
+        <div class="dbody grid g2">
+          <div><b>Internal audit</b><ul><li>Risk-based audit</li><li>Process &amp; operational audits</li><li>Site &amp; branch audits</li></ul></div>
+          <div><b>Controls &amp; risk</b><ul><li>IFC assessment &amp; design</li><li>Fraud &amp; enterprise risk</li><li>Gap tracking</li></ul></div>
+          <div><b>Governance</b><ul><li>Board reporting</li><li>Delegation of authority</li><li>Governance reviews</li></ul></div>
+          <div><b>Process</b><ul><li>Process reviews &amp; SOPs</li><li>Workflow design</li><li>Automation opportunities</li></ul></div>
+        </div></details>
+
+      <details><summary><span><h3>Structuring &amp; Institutional Advisory</h3><small>The right entity, ownership and governance set-up</small></span></summary>
+        <div class="dbody grid g2">
+          <div><b>Entity structuring</b><ul><li>Company / LLP / group</li><li>Holding &amp; JV structures</li><li>Restructuring</li></ul></div>
+          <div><b>Startups</b><ul><li>Incorporation &amp; founder structure</li><li>Capital structure</li><li>Investor readiness</li></ul></div>
+          <div><b>NGOs &amp; non-profits</b><ul><li>Trust, society, Section 8</li><li>12A/12AB, 80G, FCRA</li><li>Grant &amp; fund accounting</li></ul></div>
+          <div><b>CSR &amp; institutions</b><ul><li>CSR compliance &amp; reporting</li><li>Financial governance</li><li>Institutional MIS</li></ul></div>
+        </div></details>
+    </section>
+
+    <section>
+      <div class="lbl">specialist services — tabs, one panel visible at a time</div>
+      <div class="tabs" role="tablist" id="spec">
+        <button class="tab" role="tab" aria-selected="true" data-t="acc">Accounting</button>
+        <button class="tab" role="tab" aria-selected="false" data-t="tax">Tax &amp; GST</button>
+        <button class="tab" role="tab" aria-selected="false" data-t="comp">Compliance</button>
+        <button class="tab" role="tab" aria-selected="false" data-t="tech">Finance tech</button>
+        <button class="tab" role="tab" aria-selected="false" data-t="ip">IP</button>
+      </div>
+      <div class="card soft" id="specp"></div>
+    </section>
+
+    <section>
+      <span class="note">footer note: audit, assurance, valuation &amp; patent work through qualified, authorised professionals</span>
+      <div class="row"><a class="btn p" href="#contact">Discuss your requirements</a></div>
+    </section>
+  </div>
+
+  <!-- ================= INDUSTRIES ================= -->
+  <div data-page="industries">
+    <section>
+      <div class="lbl">page intro</div>
+      <h1>Who we work with</h1>
+      <p class="lead">Same discipline, different pressures. Find your sector.</p>
+    </section>
+    <section>
+      <div class="lbl">6 folded rows — open shows typical needs + matching service</div>
+      <details open><summary><span><h3>SMEs &amp; family businesses</h3><small>CFO-level support without a full-time CFO</small></span></summary><div class="dbody"><p class="muted">Budgets, MIS, working capital, controls.</p><div class="chips"><span class="chip">→ Virtual CFO</span><span class="chip">→ Risk &amp; Audit</span></div></div></details>
+      <details><summary><span><h3>Manufacturing, trading &amp; e-commerce</h3><small>Margins, inventory, working capital</small></span></summary><div class="dbody"><p class="muted">Product costing, channel profitability, credit control.</p><div class="chips"><span class="chip">→ Virtual CFO</span></div></div></details>
+      <details><summary><span><h3>Construction, real estate &amp; infrastructure</h3><small>Project finance and structuring</small></span></summary><div class="dbody"><p class="muted">Project cash flows, contract profitability, SPV structuring.</p><div class="chips"><span class="chip">→ Transactions</span><span class="chip">→ Structuring</span></div></div></details>
+      <details><summary><span><h3>Startups &amp; technology</h3><small>Structure, models, investor readiness</small></span></summary><div class="dbody"><p class="muted">Founder structure, SaaS metrics, fundraising support.</p><div class="chips"><span class="chip">→ Structuring</span><span class="chip">→ Transactions</span></div></div></details>
+      <details><summary><span><h3>Healthcare, hospitality, education &amp; services</h3><small>Unit economics and cost control</small></span></summary><div class="dbody"><p class="muted">Service-line profitability, budgeting, capex planning.</p><div class="chips"><span class="chip">→ Virtual CFO</span></div></div></details>
+      <details><summary><span><h3>NGOs &amp; institutions</h3><small>Fund accounting and compliance</small></span></summary><div class="dbody"><p class="muted">Grant accounting, 12A/80G/FCRA, governance.</p><div class="chips"><span class="chip">→ Structuring &amp; Institutions</span></div></div></details>
+    </section>
+  </div>
+
+  <!-- ================= INSIGHTS ================= -->
+  <div data-page="insights">
+    <section>
+      <div class="lbl">page intro</div>
+      <h1>Insights</h1>
+      <div class="tabs"><span class="tab" aria-selected="true">All</span><span class="tab">Business finance</span><span class="tab">Transactions</span><span class="tab">Governance</span><span class="tab">Tax &amp; regulatory</span><span class="tab">NGO</span></div>
+      <div class="field" style="max-width:320px">🔍 search articles</div>
+    </section>
+    <section>
+      <div class="lbl">featured + latest</div>
+      <div class="grid g2"><div class="img" style="min-height:160px"><span>featured article</span></div><div class="card soft"><span class="lbl">category · date · author</span><h2>Featured article title</h2><p class="muted">Two-line summary.</p></div></div>
+      <div class="grid g3">
+        <div class="card soft"><span class="lbl">category · date</span><h3>Article title</h3></div>
+        <div class="card soft"><span class="lbl">category · date</span><h3>Article title</h3></div>
+        <div class="card soft"><span class="lbl">category · date</span><h3>Article title</h3></div>
+      </div>
+      <span class="note">hidden from nav until 3 real articles are published</span>
+    </section>
+  </div>
+
+  <!-- ================= CONTACT ================= -->
+  <div data-page="contact">
+    <section>
+      <div class="lbl">page intro</div>
+      <h1>Let's understand your requirement.</h1>
+      <p class="lead">Tell us briefly what you're working on. We reply within two working days.</p>
+    </section>
+    <section>
+      <div class="grid split">
+        <div class="form">
+          <div class="field">Name *</div><div class="field">Organisation</div>
+          <div class="field">Email *</div><div class="field">Phone</div>
+          <div class="field w">What do you need help with? ▾</div>
+          <div class="field w ta">Briefly describe your requirement</div>
+          <div class="field w">☐ I agree to the privacy policy</div>
+          <div class="w"><span class="btn p">Send enquiry</span></div>
+        </div>
+        <div class="card soft">
+          <span class="lbl">direct</span>
+          <p>✉ arthaarthee@gmail.com</p>
+          <p>☎ +91 78922 99129</p>
+          <p>WhatsApp</p>
+          <p>in LinkedIn</p>
+          <p class="muted">J.P. Nagar, Bengaluru</p>
+        </div>
+      </div>
+      <details><summary><span><h3>Dropdown options</h3><small>8 choices, mapped to the 4 areas</small></span></summary><div class="dbody"><div class="chips"><span class="chip">Virtual CFO</span><span class="chip">Transactions</span><span class="chip">Risk &amp; audit</span><span class="chip">Structuring</span><span class="chip">Startup</span><span class="chip">NGO</span><span class="chip">Tax &amp; compliance</span><span class="chip">Other</span></div></div></details>
+    </section>
+  </div>
+  </main>
+
+  <footer>
+    <div class="cols">
+      <div><b>ARTHAARTHEE</b><br><span class="muted">Insights | Structure | Governance</span></div>
+      <div class="muted">About · Services · Industries · Insights · Contact<br>Privacy · Terms</div>
+      <div class="muted">arthaarthee@gmail.com<br>+91 78922 99129<br>J.P. Nagar, Bengaluru</div>
+    </div>
+    <p class="muted">Arthaarthee Private Limited · CIN U74120KA2021PTC152370. Regulated work (audit, assurance, valuation, patents) is carried out through appropriately qualified and authorised professionals.</p>
+  </footer>
+</div>
+
+<script>
+const spec={
+  acc:["Accounting & reporting","Book-keeping, financial statements, Ind AS support, consolidation"],
+  tax:["Direct tax & GST","Tax planning & compliance, notices & assessments, GST health checks, ITC reviews"],
+  comp:["Corporate compliance","Companies Act, LLP, ROC filings, compliance calendars"],
+  tech:["Finance technology","Zoho Books & ERP set-up, reconciliation automation, dashboards & MIS"],
+  ip:["IP & trademarks","Trademark, copyright, IP portfolio — patents via qualified patent professionals"]
+};
+const p=document.getElementById('specp');
+function showSpec(k){const[h,t]=spec[k];p.innerHTML='<h3>'+h+'</h3><p class="muted">'+t+'</p>';document.querySelectorAll('#spec .tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===k))}
+document.getElementById('spec').addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)showSpec(b.dataset.t)});
+showSpec('acc');
+const pages=['home','about','services','industries','insights','contact'];
+function route(){const h=location.hash.slice(1);const cur=pages.includes(h)?h:'home';
+  document.querySelectorAll('[data-page]').forEach(el=>el.classList.toggle('show',el.dataset.page===cur));
+  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur));
+  if(h)window.scrollTo(0,0);}
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o);menu.textContent=o?'Close':'Menu'});
+nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu'}});
+addEventListener('hashchange',route);route();
+</script>

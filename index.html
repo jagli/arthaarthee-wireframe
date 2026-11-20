@@ -1,0 +1,430 @@
+<meta name="robots" content="noindex, nofollow">
+<title>Arthaarthee Sketch Wireframe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Raleway:wght@400;500;600&display=swap">
+<style>
+/* Layout: low-fidelity, clickable wireframe — light monochrome boxes, clean sans labels, everything folded behind tabs and disclosures (single light theme by choice) */
+:root{
+  --bg:#f7f7f5; --paper:#ffffff; --ink:#1f1f1f; --muted:#7a7a76; --line:#dcdcd7; --fill:#f2f2ef; --hi:#f6efd9;
+  --hand:'Raleway',system-ui,sans-serif; --body:'Manrope',system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.site{max-width:980px;margin:24px auto 60px;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.lbl,.tagline,.step b,.tab,nav a,.note{letter-spacing:.04em}
+.lbl{text-transform:uppercase;font-size:11px!important;font-weight:600}
+.card,details,.step,.tab,.btn,.logo,.ico{border-width:1.5px!important}
+.card:not(.soft),details,.step{border-color:#c9c9c3!important}
+.hand{font-family:var(--hand)}
+.bar{display:flex;gap:6px;padding:8px 12px;border-bottom:2px solid var(--ink);background:var(--fill)}
+.bar i{width:10px;height:10px;border:1.5px solid var(--ink);border-radius:50%}
+.bar span{margin-left:8px;font:12px var(--hand);color:var(--muted)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1.5px dashed var(--line);padding:12px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{width:54px;height:54px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:11px/1.1 var(--hand);text-align:center}
+nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+nav a{font:15px var(--hand);color:var(--ink);text-decoration:none;padding:4px 10px;border-radius:6px}
+nav a.on{background:var(--hi)}
+nav a:focus-visible,.btn:focus-visible,summary:focus-visible,.tab:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.btn{display:inline-block;font:600 13px var(--body);padding:9px 16px;border:2px solid var(--ink);border-radius:6px;background:var(--paper);color:var(--ink);text-decoration:none;cursor:pointer}
+.btn.p{background:var(--ink);color:var(--paper)}
+main{padding:0 20px}
+section{padding:36px 0;border-bottom:1.5px dashed var(--line);display:flex;flex-direction:column;gap:14px}
+section:last-child{border-bottom:0}
+.lbl{font:13px var(--hand);color:var(--muted)}
+.lbl::before{content:"// "}
+h1{font:700 clamp(1.7rem,4.5vw,2.5rem)/1.15 var(--body);max-width:20ch;text-wrap:balance;margin:0}
+h2{font:600 1.35rem/1.25 var(--body);margin:0;text-wrap:balance}
+h3{font:600 1rem var(--body);margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+.lead{color:var(--muted);max-width:56ch}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.img{border:2px solid var(--line);border-radius:6px;background:linear-gradient(to top right,transparent calc(50% - 1px),var(--line) 50%,transparent calc(50% + 1px)),linear-gradient(to bottom right,transparent calc(50% - 1px),var(--line) 50%,transparent calc(50% + 1px));min-height:120px;display:grid;place-items:center}
+.img span{background:var(--paper);padding:2px 8px;font:13px var(--hand);color:var(--muted)}
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{border:2px solid var(--ink);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card.soft{border-color:var(--line)}
+.ico{width:28px;height:28px;border:2px solid var(--ink);border-radius:6px}
+.tagline{font:700 13px var(--hand);letter-spacing:.12em}
+details{border:2px solid var(--ink);border-radius:8px;background:var(--paper)}
+details+details{margin-top:8px}
+summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:700 18px var(--hand)}
+details[open] summary::after{content:"–"}
+summary small{display:block;color:var(--muted);font-size:13px;font-weight:400}
+.dbody{padding:0 14px 14px;display:grid;gap:12px}
+.dbody ul{margin:4px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;align-items:stretch}
+.step{border:2px solid var(--ink);border-radius:8px;padding:10px;position:relative}
+.step b{font:700 15px var(--hand);display:block}
+.step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font:700 16px var(--hand);background:var(--paper)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{font:14px var(--hand);border:2px solid var(--ink);border-radius:20px;padding:4px 14px;background:var(--paper);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:13px;border:1.5px solid var(--line);border-radius:20px;padding:3px 10px;color:var(--muted)}
+.field{border:2px solid var(--line);border-radius:6px;padding:9px 10px;font-size:13px;color:var(--muted)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.form .w{grid-column:1/-1}
+.ta{height:80px}
+.note{background:var(--hi);font:13px var(--hand);padding:6px 10px;border-radius:4px;align-self:flex-start}
+footer{background:var(--fill);border-top:2px solid var(--ink);padding:20px;display:grid;gap:10px;font-size:13px}
+footer .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.legend{max-width:980px;margin:0 auto;font:14px var(--hand);color:var(--muted);display:flex;gap:16px;flex-wrap:wrap;padding-top:20px}
+[data-page]{display:none}
+[data-page].show{display:block}
+/* responsive */
+main{padding:0 clamp(16px,4vw,32px)}
+header{padding:12px clamp(16px,4vw,32px)}
+.split{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.menu{display:none;margin-left:auto;font:600 13px var(--body);border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:8px 12px;cursor:pointer}
+summary h3,summary small{overflow-wrap:anywhere}
+@media (max-width:960px){
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:14px}
+  .step::after{display:none}
+}
+@media (max-width:760px){
+  .site{margin:12px auto 32px;border-radius:8px}
+  .menu{display:block}
+  header .btn{display:none}
+  nav{display:none;flex-basis:100%;flex-direction:column;gap:2px;padding-top:8px;border-top:1px solid var(--line)}
+  nav.open{display:flex}
+  nav a{padding:10px 8px;font-size:16px}
+  .logo{width:46px;height:46px;font-size:10px}
+  .g2,.g3,.g4,.form,.split,footer .cols{grid-template-columns:1fr}
+  .form .w{grid-column:auto}
+  .steps{grid-template-columns:1fr;row-gap:16px}
+  .step{display:flex;gap:10px;align-items:baseline}
+  .step::after{display:block!important;content:"↓";right:auto;left:20px;top:auto;bottom:-15px;transform:none}
+  .step:last-child::after{display:none!important}
+  section{padding:26px 0}
+  .row .btn{flex:1 1 100%;text-align:center}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+  .tab{flex:0 0 auto}
+  .img{min-height:96px}
+  .legend{font-size:12px}
+}
+@media (prefers-reduced-motion:no-preference){details[open] .dbody{animation:f .2s ease}@keyframes f{from{opacity:.3}}}
+</style>
+<style>
+/* v3 layouts */
+.split2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:center}
+.triad{display:grid;gap:8px}
+.triad button{all:unset;cursor:pointer;border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.triad button[aria-selected="true"]{border-color:var(--ink);background:var(--fill)}
+.triad button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.triad b{font:600 15px var(--body)}
+.triad span{font:11px var(--hand);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.triadPanel{border-left:2px solid var(--ink);padding:4px 0 4px 14px;color:var(--muted);font-size:14px;min-height:64px}
+.band{background:var(--fill);margin:0 calc(-1*clamp(16px,4vw,32px));padding:40px clamp(16px,4vw,32px);border-bottom:1.5px dashed var(--line)}
+.quote{font:500 clamp(1.15rem,2.6vw,1.5rem)/1.4 var(--body);max-width:40ch;text-wrap:balance}
+.index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+.index details{border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0;margin:0!important}
+.index summary{padding:14px 0}
+.index summary .n{font:600 11px var(--hand);color:var(--muted);margin-right:10px;letter-spacing:.08em}
+.index .dbody{padding:0 0 14px 26px}
+.index .dbody a{font:600 12px var(--hand);color:var(--ink);letter-spacing:.04em}
+.paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.path{border:1.5px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px;color:inherit;text-decoration:none}
+.path:hover{border-color:var(--ink)}
+.svcLayout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;align-items:start}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);display:flex;flex-direction:column;gap:2px;border-left:1.5px solid var(--line)}
+.side a{font-size:13px;color:var(--muted);text-decoration:none;padding:6px 12px;margin-left:-1.5px;border-left:1.5px solid transparent}
+.side a.on{color:var(--ink);font-weight:600;border-left-color:var(--ink)}
+.offer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.timeline{display:grid;gap:0;border-left:1.5px solid var(--line);margin-left:6px}
+.timeline div{padding:6px 0 14px 18px;position:relative}
+.timeline div::before{content:"";position:absolute;left:-6px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink)}
+.timeline b{font:600 14px var(--body)}
+.list{display:grid}
+.list .item{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.list .item .muted{font-size:13px}
+.seg{display:inline-flex;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.seg button{all:unset;cursor:pointer;padding:8px 16px;font:600 13px var(--body)}
+.seg button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.seg button:focus-visible{outline:2px solid var(--ink);outline-offset:-4px}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal span{border:1px solid var(--line);border-radius:4px;aspect-ratio:1;max-width:100%;display:grid;place-items:center;font-size:11px;color:var(--muted)}
+.cal span.a{border-color:var(--ink);color:var(--ink)}
+.slots{display:flex;gap:6px;flex-wrap:wrap}
+.legal p{font-size:14px;color:var(--muted)}
+.crumb{font:13px var(--hand);color:var(--muted)}.crumb a{color:inherit}
+.hdr-ctas{display:flex;gap:8px}
+.mSel{display:none}
+@media (max-width:960px){.svcLayout{grid-template-columns:1fr}.side{display:none}.mSel{display:block}}
+@media (max-width:760px){
+  .hdr-ctas .keep{display:inline-block!important;padding:7px 12px}
+  .split2,.index,.paths,.offer{grid-template-columns:1fr}
+  .list .item{grid-template-columns:1fr;gap:4px}
+  .band{padding:28px clamp(16px,4vw,32px)}
+}
+</style>
+
+<div class="legend"><span>wireframe v3 — fresh layout, client content</span><span>▢ box · ✕ image · + folded · ▸ tabbed</span></div>
+
+<div class="site">
+  <div class="bar"><i></i><i></i><i></i><span>arthaarthee.com</span></div>
+  <header>
+    <a href="#home" class="logo" style="color:inherit;text-decoration:none" aria-label="Home">LOGO<br>+ name</a>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#insights">Insights</a><a href="#resources">Resources</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="hdr-ctas"><a class="btn p keep" href="#contact-call">Book a call</a></div>
+  </header>
+
+  <main>
+  <!-- ================= HOME ================= -->
+  <div data-page="home">
+    <section>
+      <div class="lbl">hero — split: promise left, the three pillars right (▸ tap one)</div>
+      <div class="split2">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="tagline">INSIGHTS | STRUCTURE | GOVERNANCE</div>
+          <h1>Enabling Sustainable Growth</h1>
+          <p class="lead">through Financial Intelligence, Institutional Structuring and Effective Governance.</p>
+          <div class="row"><a class="btn p" href="#contact-call">Book a call</a><a class="btn" href="#services">Explore services</a></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="triad" role="tablist" id="triad"></div>
+          <div class="triadPanel" id="triadPanel"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="band">
+      <div class="lbl">positioning — one statement as a band</div>
+      <p class="quote" style="margin-top:10px">A multidisciplinary business and financial advisory organisation, providing integrated solutions across finance, strategy, structuring and governance.</p>
+      <p class="muted" style="margin-top:10px">→ The outcome: sustainable growth and long-term value.</p>
+    </div>
+
+    <section>
+      <div class="lbl">services — numbered index, 2 columns; + opens 4 offerings inline</div>
+      <div class="row" style="justify-content:space-between;align-items:baseline"><h2>Our services</h2><a href="#services" class="hand" style="color:inherit;font-size:13px">all services →</a></div>
+      <div class="index" id="homeIndex"></div>
+    </section>
+
+    <section>
+      <div class="lbl">two ways in — choose your path</div>
+      <h2>Let's discuss your business requirements.</h2>
+      <div class="paths">
+        <a class="path" href="#contact-call"><span class="lbl">fastest</span><h3>Book a call</h3><p class="muted">Pick a 30-minute slot that suits you.</p></a>
+        <a class="path" href="#contact"><span class="lbl">detailed</span><h3>Submit an enquiry</h3><p class="muted">Tell us your requirement; we'll respond by email.</p></a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <div data-page="about">
+    <section>
+      <div class="lbl">organisation — statement left, facts right</div>
+      <div class="split2" style="align-items:start">
+        <div style="display:flex;flex-direction:column;gap:12px"><h1>About Arthaarthee</h1><p class="lead">A multidisciplinary business and financial advisory organisation providing integrated solutions to businesses and institutions, supporting their growth and long-term value creation.</p></div>
+        <div class="card soft"><span class="lbl">at a glance</span><p>Bengaluru, India</p><p>Est. 2021</p><p class="muted">Professional · analytical · integrity-driven</p></div>
+      </div>
+    </section>
+    <section>
+      <div class="lbl">philosophy — same triad component as home</div>
+      <div class="split2" style="align-items:start">
+        <div class="triad" role="tablist" id="triad2"></div>
+        <div class="triadPanel" id="triadPanel2"></div>
+      </div>
+    </section>
+    <section>
+      <div class="lbl">expertise · approach — side by side</div>
+      <div class="split2" style="align-items:start">
+        <div style="display:flex;flex-direction:column;gap:10px"><h2>Expertise</h2><div class="chips"><span class="chip">Finance</span><span class="chip">Strategy</span><span class="chip">Structuring</span><span class="chip">Governance</span><span class="chip">Tax &amp; regulatory</span><span class="chip">Legal solutions</span><span class="chip">Technology</span></div></div>
+        <div style="display:flex;flex-direction:column;gap:10px"><h2>Approach</h2>
+          <div class="timeline"><div><b>Understand</b> <span class="muted">objectives</span></div><div><b>Diagnose</b> <span class="muted">gaps &amp; risks</span></div><div><b>Design</b> <span class="muted">the solution</span></div><div><b>Implement</b> <span class="muted">with you</span></div><div><b>Review</b> <span class="muted">&amp; refine</span></div></div>
+          <span class="note">wording to be confirmed</span></div>
+      </div>
+    </section>
+    <section>
+      <div class="lbl">team — verified people only</div>
+      <div class="grid g3">
+        <div class="card soft"><div class="img" style="min-height:80px"><span>photo</span></div><h3>Name</h3><p class="muted">Qualification · focus</p></div>
+        <div class="card soft"><div class="img" style="min-height:80px"><span>photo</span></div><h3>Name</h3><p class="muted">Qualification · focus</p></div>
+        <div class="card soft"><div class="img" style="min-height:80px"><span>photo</span></div><h3>Name</h3><p class="muted">Qualification · focus</p></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= SERVICES (landing) ================= -->
+  <div data-page="services">
+    <section>
+      <div class="lbl">services landing — 8 categories, short descriptions, no sub-services</div>
+      <h1>Our services</h1>
+      <p class="lead">Eight practice areas, one integrated perspective.</p>
+      <div class="grid g2" id="svcList"></div>
+    </section>
+  </div>
+
+  <!-- ================= SERVICE DETAIL ================= -->
+  <div data-page="service">
+    <section>
+      <div class="crumb"><a href="#services">Services</a> / <span id="sdCrumb"></span></div>
+      <div class="svcLayout">
+        <nav class="side" id="side" aria-label="All services"></nav>
+        <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+          <div class="field mSel">Switch service ▾</div>
+          <div class="lbl">service page — sticky list of all 8 on the left (desktop)</div>
+          <h1 id="sdTitle"></h1>
+          <p class="lead" id="sdLine"></p>
+          <div><span class="lbl">key offerings — + for scope</span><div class="offer" id="sdItems" style="margin-top:8px"></div></div>
+          <div class="grid g2">
+            <div class="card soft"><h3>Client requirements</h3><p class="muted">2–3 situations in the client's words.</p></div>
+            <div class="card soft"><h3>Engagement approach</h3><p class="muted">Scope → plan → delivery → review.</p></div>
+          </div>
+          <div class="card" style="flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px"><h3>Discuss your requirements</h3><a class="btn p" href="#contact-call">Book a call</a></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= INSIGHTS ================= -->
+  <div data-page="insights">
+    <section>
+      <div class="lbl">editorial list — date · title · category, scannable</div>
+      <h1>Insights</h1>
+      <div class="tabs"><span class="tab" aria-selected="true">All</span><span class="tab">Perspectives</span><span class="tab">Regulatory updates</span><span class="tab">Business finance</span><span class="tab">Governance</span></div>
+      <div class="list">
+        <div class="item"><span class="muted">Date</span><span><b>Featured article title</b><br><span class="muted">One-line summary</span></span><span class="chip">category</span></div>
+        <div class="item"><span class="muted">Date</span><span><b>Article title</b></span><span class="chip">category</span></div>
+        <div class="item"><span class="muted">Date</span><span><b>Article title</b></span><span class="chip">category</span></div>
+        <div class="item"><span class="muted">Date</span><span><b>Article title</b></span><span class="chip">category</span></div>
+      </div>
+      <span class="note">publish when 3 real articles exist</span>
+    </section>
+  </div>
+
+  <!-- ================= RESOURCES ================= -->
+  <div data-page="resources">
+    <section>
+      <div class="lbl">library — ▸ filter by type, card shows format</div>
+      <h1>Resources</h1>
+      <div class="seg" role="tablist" id="resTabs"><button role="tab" aria-selected="true" data-t="g">Guides</button><button role="tab" aria-selected="false" data-t="p">Publications</button><button role="tab" aria-selected="false" data-t="t">Tools</button></div>
+      <div class="grid g3" id="resPanel"></div>
+      <span class="note">phase 2 — hidden until stocked</span>
+    </section>
+  </div>
+
+  <!-- ================= CONTACT ================= -->
+  <div data-page="contact">
+    <section>
+      <div class="lbl">contact — ▸ one page, two modes</div>
+      <h1>Let's discuss your business requirements</h1>
+      <p class="lead">Whether you are strengthening financial management, evaluating an opportunity, restructuring your organisation or addressing a specific advisory need, we would be pleased to understand your objectives.</p>
+      <div class="seg" role="tablist" id="cMode"><button role="tab" aria-selected="false" data-m="call">Book a call</button><button role="tab" aria-selected="true" data-m="form">Submit an enquiry</button></div>
+      <div class="grid split">
+        <div id="mForm" class="form">
+          <div class="field">Name *</div><div class="field">Organisation</div>
+          <div class="field">Designation</div><div class="field">Email address *</div>
+          <div class="field">Contact number</div><div class="field">Nature of requirement ▾</div>
+          <div class="field w ta">Brief description of requirement</div>
+          <div class="field w">☐ I agree to the Privacy Policy</div>
+          <div class="w"><span class="btn p">Submit enquiry</span></div>
+        </div>
+        <div id="mCall" hidden style="display:flex;flex-direction:column;gap:10px">
+          <span class="lbl">embedded booking calendar (Google Calendar / Calendly)</span>
+          <div class="cal" id="cal"></div>
+          <div class="slots"><span class="chip">10:00</span><span class="chip">11:30</span><span class="chip">15:00</span><span class="chip">16:30</span></div>
+          <div><span class="btn p">Confirm 30-min call</span></div>
+        </div>
+        <div class="card soft">
+          <span class="lbl">contact details</span>
+          <p>✉ info@arthaarthee.com</p><p>☎ +91 78922 99129</p><p>⌂ www.arthaarthee.com</p><p class="muted">Bengaluru, India</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= LEGAL ================= -->
+  <div data-page="privacy">
+    <section class="legal">
+      <div class="lbl">footer page</div>
+      <h1>Privacy Policy</h1>
+      <p>Arthaarthee Private Limited respects the privacy of visitors to its website. This policy explains how we collect, use and protect personal information.</p>
+      <details open><summary><h3>Information we collect</h3></summary><div class="dbody"><p>Name, organisation, designation, email, contact number and enquiry details, plus technical usage information to maintain the site.</p></div></details>
+      <details><summary><h3>Use of information</h3></summary><div class="dbody"><p>To respond to enquiries, understand requirements, communicate about services, improve the website and meet legal requirements.</p></div></details>
+      <details><summary><h3>Sharing and protection</h3></summary><div class="dbody"><p>We do not sell personal information. Shared only with authorised personnel, associates or providers where necessary, or as required by law.</p></div></details>
+      <details><summary><h3>Retention and your rights</h3></summary><div class="dbody"><p>Kept only as long as necessary. You may request access, correction or deletion, or withdraw consent, at info@arthaarthee.com.</p></div></details>
+      <details><summary><h3>Updates</h3></summary><div class="dbody"><p>This policy may be updated periodically; the current version is published here.</p></div></details>
+    </section>
+  </div>
+  <div data-page="terms">
+    <section class="legal">
+      <div class="lbl">footer page</div>
+      <h1>Terms of Use</h1>
+      <p>This website is owned and operated by Arthaarthee Private Limited. By using it, you agree to these terms.</p>
+      <details open><summary><h3>General information only</h3></summary><div class="dbody"><p>Content is not professional advice or an offer to undertake work. Engagements are governed by a separately agreed scope and terms.</p></div></details>
+      <details><summary><h3>Intellectual property</h3></summary><div class="dbody"><p>All text, articles, graphics, logos and publications belong to or are licensed to Arthaarthee and may not be reproduced without written permission.</p></div></details>
+      <details><summary><h3>Acceptable use</h3></summary><div class="dbody"><p>No misuse, unauthorised access or unlawful use of the website or its content.</p></div></details>
+      <details><summary><h3>External links</h3></summary><div class="dbody"><p>Links to outside resources are for reference only and are not advice, solicitation or advertisement.</p></div></details>
+      <details><summary><h3>Updates</h3></summary><div class="dbody"><p>These terms may be updated periodically.</p></div></details>
+    </section>
+  </div>
+  </main>
+
+  <footer>
+    <div class="cols">
+      <div><b>ARTHAARTHEE</b><br><span class="muted">Insights | Structure | Governance</span></div>
+      <div class="muted"><a href="#about" style="color:inherit">About</a> · <a href="#services" style="color:inherit">Services</a> · <a href="#insights" style="color:inherit">Insights</a> · <a href="#resources" style="color:inherit">Resources</a> · <a href="#contact" style="color:inherit">Contact</a><br><a href="#privacy" style="color:inherit">Privacy Policy</a> · <a href="#terms" style="color:inherit">Terms of Use</a></div>
+      <div class="muted">info@arthaarthee.com<br>+91 78922 99129<br>Bengaluru, India</div>
+    </div>
+    <p class="muted">© Arthaarthee Private Limited · CIN U74120KA2021PTC152370</p>
+  </footer>
+</div>
+
+<script>
+const PILLARS=[
+ ["Insights","Financial & business intelligence","Financial analysis, business intelligence, performance measurement, management reporting and informed decision-making."],
+ ["Structure","Financial & process architecture","Financial systems, business processes, organisational structures, financial planning, resource allocation and operational frameworks."],
+ ["Governance","Accountability & institutional governance","Corporate governance, internal controls, risk management, regulatory compliance, transparency and oversight."]];
+const SVC=[
+ ["business-finance","Business Finance & Virtual CFO Advisory","Strengthening financial management, business performance and decision-making.",["Virtual CFO & Strategic Finance","Financial Planning, Budgeting & Forecasting","Cash Flow & Working Capital Management","Business Performance & Financial Reporting"]],
+ ["transactions","Transaction & Corporate Finance Advisory","Supporting financial transactions, capital raising and investment decisions.",["Mergers, Acquisitions & Transaction Advisory","Fundraising & Capital Structuring","Financial Modelling & Valuation Support","Project Finance & Investment Advisory"]],
+ ["structuring","Business Strategy & Entity Structuring","Designing business, organisational and legal structures for growth.",["Business & Corporate Structuring","Startup & Entrepreneurial Advisory","Business Restructuring & Reorganisation","Business Diagnostics & Strategic Advisory"]],
+ ["risk-governance","Risk, Internal Audit & Governance","Strengthening internal controls, risk management and accountability.",["Internal & Operational Audit","Internal Controls & Risk Management","Corporate Governance & Board Advisory","Business Process Review & Improvement"]],
+ ["tax-regulatory","Accounting, Taxation & Regulatory Advisory","Integrated accounting, taxation and regulatory solutions.",["Accounting & Financial Reporting","Direct & Indirect Tax Advisory","Corporate & Regulatory Compliance","Audit & Assurance Support"]],
+ ["ngo-institutional","NGO, Non-Profit & Institutional Advisory","Financial management, compliance and sustainability for institutions.",["NGO & Non-Profit Compliance","Institutional Finance & Governance","CSR & Social Sector Advisory","Fund Management & Institutional Development"]],
+ ["digital-finance","Digital Finance & Technology Enablement","Technology, automation and analytics for stronger finance functions.",["Cloud Accounting & ERP Solutions","Finance Process Automation","Financial Analytics & MIS Dashboards","AI & Technology-enabled Finance Solutions"]],
+ ["ip-advisory","Intellectual Property & Intangible Asset Advisory","Identifying, protecting and commercially leveraging intellectual property.",["Trademark Registration & Management","Patent & Copyright Services","IP Strategy & Portfolio Management","Intangible Asset & IP Commercialisation Advisory"]]];
+const $=id=>document.getElementById(id), pad=n=>String(n).padStart(2,'0');
+function triad(listId,panelId){const L=$(listId),P=$(panelId);
+ L.innerHTML=PILLARS.map(([t,m],i)=>`<button role="tab" aria-selected="${!i}" data-i="${i}"><b>${t}</b><span>${m}</span></button>`).join('');
+ const set=i=>{P.textContent=PILLARS[i][2];L.querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.i==i))};
+ L.addEventListener('click',e=>{const b=e.target.closest('button');if(b)set(b.dataset.i)});set(0)}
+triad('triad','triadPanel');triad('triad2','triadPanel2');
+$('homeIndex').innerHTML=SVC.map(([s,t,l,it],i)=>`<details><summary><span><span class="n">${pad(i+1)}</span><b>${t}</b></span></summary><div class="dbody"><ul>${it.map(x=>`<li>${x}</li>`).join('')}</ul><a href="#s-${s}">view service →</a></div></details>`).join('');
+$('svcList').innerHTML=SVC.map(([s,t,l],i)=>`<a class="card svc" href="#s-${s}" style="color:inherit;text-decoration:none"><span class="lbl">${pad(i+1)}</span><h3>${t}</h3><p class="muted">${l}</p></a>`).join('');
+$('side').innerHTML=SVC.map(([s,t],i)=>`<a href="#s-${s}" data-s="${s}">${pad(i+1)} ${t}</a>`).join('');
+const RES={g:["Guide title","Guide title","Guide title"],p:["Publication title","Publication title","Publication title"],t:["Compliance calendar","Tool name","Tool name"]};
+function res(k){$('resPanel').innerHTML=RES[k].map(x=>`<div class="card soft"><span class="lbl">${k=='t'?'tool':k=='p'?'pdf':'guide'}</span><h3>${x}</h3><span class="muted" style="font-size:13px">one-line description</span></div>`).join('');$('resTabs').querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===k))}
+$('resTabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b)res(b.dataset.t)});res('g');
+$('cal').innerHTML=Array.from({length:28},(_,i)=>`<span class="${[3,4,9,11,16,18,23].includes(i)?'a':''}">${i+1}</span>`).join('');
+function mode(m){$('mForm').hidden=m!=='form';$('mCall').hidden=m!=='call';$('mCall').style.display=m==='call'?'flex':'none';$('cMode').querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.m===m))}
+$('cMode').addEventListener('click',e=>{const b=e.target.closest('button');if(b)mode(b.dataset.m)});
+function showService(slug){const i=SVC.findIndex(s=>s[0]===slug);if(i<0)return false;const[s,t,l,items]=SVC[i];
+ $('sdCrumb').textContent=t;$('sdTitle').textContent=t;$('sdLine').textContent=l;
+ $('sdItems').innerHTML=items.map(x=>`<details style="margin:0"><summary><h3>${x}</h3></summary><div class="dbody"><p class="muted">Scope in 2–3 lines.</p></div></details>`).join('');
+ $('side').querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.s===s));return true}
+const pages=['home','about','services','insights','resources','contact','privacy','terms'];
+function route(){const h=location.hash.slice(1);let cur='home';
+ if(h.startsWith('s-')&&showService(h.slice(2)))cur='service';
+ else if(h==='contact-call'){cur='contact';mode('call')}
+ else if(pages.includes(h)){cur=h;if(h==='contact')mode('form')}
+ document.querySelectorAll('[data-page]').forEach(el=>el.classList.toggle('show',el.dataset.page===cur));
+ const k=cur==='service'?'services':cur;
+ document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+k));
+ if(h)window.scrollTo(0,0)}
+const menu=$('menu'),nav=$('nav');
+menu.addEventListener('click',()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o);menu.textContent=o?'Close':'Menu'});
+nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu'}});
+addEventListener('hashchange',route);route();
+</script>
