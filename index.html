@@ -33,7 +33,7 @@ main{padding:0 20px}
 section{padding:36px 0;border-bottom:1.5px dashed var(--line);display:flex;flex-direction:column;gap:14px}
 section:last-child{border-bottom:0}
 .lbl{font:13px var(--hand);color:var(--muted)}
-.lbl::before{content:"// "}
+
 h1{font:700 clamp(1.7rem,4.5vw,2.5rem)/1.15 var(--body);max-width:20ch;text-wrap:balance;margin:0}
 h2{font:600 1.35rem/1.25 var(--body);margin:0;text-wrap:balance}
 h3{font:600 1rem var(--body);margin:0}
@@ -168,8 +168,7 @@ summary h3,summary small{overflow-wrap:anywhere}
 
 
 <div class="site">
-  <div class="bar"><i></i><i></i><i></i><span>arthaarthee.com</span></div>
-  <header>
+    <header>
     <a href="#home" class="logo" style="color:inherit;text-decoration:none" aria-label="Home">LOGO<br>+ name</a>
     <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav">
@@ -182,7 +181,6 @@ summary h3,summary small{overflow-wrap:anywhere}
   <!-- ================= HOME ================= -->
   <div data-page="home">
     <section>
-      <div class="lbl">hero — split: promise left, the three pillars right (▸ tap one)</div>
       <div class="split2">
         <div style="display:flex;flex-direction:column;gap:14px">
           <div class="tagline">INSIGHTS | STRUCTURE | GOVERNANCE</div>
@@ -198,19 +196,16 @@ summary h3,summary small{overflow-wrap:anywhere}
     </section>
 
     <div class="band">
-      <div class="lbl">positioning — one statement as a band</div>
       <p class="quote" style="margin-top:10px">A multidisciplinary business and financial advisory organisation, providing integrated solutions across finance, strategy, structuring and governance.</p>
       <p class="muted" style="margin-top:10px">→ The outcome: sustainable growth and long-term value.</p>
     </div>
 
     <section>
-      <div class="lbl">services — numbered index, 2 columns; + opens 4 offerings inline</div>
       <div class="row" style="justify-content:space-between;align-items:baseline"><h2>Our services</h2><a href="#services" class="hand" style="color:inherit;font-size:13px">all services →</a></div>
       <div class="index" id="homeIndex"></div>
     </section>
 
     <section>
-      <div class="lbl">two ways in — choose your path</div>
       <h2>Let's discuss your business requirements.</h2>
       <div class="paths">
         <a class="path" href="#contact-call"><span class="lbl">fastest</span><h3>Book a call</h3><p class="muted">Pick a 30-minute slot that suits you.</p></a>
@@ -222,21 +217,18 @@ summary h3,summary small{overflow-wrap:anywhere}
   <!-- ================= ABOUT ================= -->
   <div data-page="about">
     <section>
-      <div class="lbl">organisation — statement left, facts right</div>
       <div class="split2" style="align-items:start">
         <div style="display:flex;flex-direction:column;gap:12px"><h1>About Arthaarthee</h1><p class="lead">A multidisciplinary business and financial advisory organisation providing integrated solutions to businesses and institutions, supporting their growth and long-term value creation.</p></div>
         <div class="card soft"><span class="lbl">at a glance</span><p>Bengaluru, India</p><p>Est. 2021</p><p class="muted">Professional · analytical · integrity-driven</p></div>
       </div>
     </section>
     <section>
-      <div class="lbl">philosophy — same triad component as home</div>
       <div class="split2" style="align-items:start">
         <div class="triad" role="tablist" id="triad2"></div>
         <div class="triadPanel" id="triadPanel2"></div>
       </div>
     </section>
     <section>
-      <div class="lbl">expertise · approach — side by side</div>
       <div class="split2" style="align-items:start">
         <div style="display:flex;flex-direction:column;gap:10px"><h2>Expertise</h2><div class="chips"><span class="chip">Finance</span><span class="chip">Strategy</span><span class="chip">Structuring</span><span class="chip">Governance</span><span class="chip">Tax &amp; regulatory</span><span class="chip">Legal solutions</span><span class="chip">Technology</span></div></div>
         <div style="display:flex;flex-direction:column;gap:10px"><h2>Approach</h2>
@@ -245,7 +237,6 @@ summary h3,summary small{overflow-wrap:anywhere}
       </div>
     </section>
     <section>
-      <div class="lbl">team — verified people only</div>
       <div class="grid g3">
         <div class="card soft"><div class="img" style="min-height:80px"><span>photo</span></div><h3>Name</h3><p class="muted">Qualification · focus</p></div>
         <div class="card soft"><div class="img" style="min-height:80px"><span>photo</span></div><h3>Name</h3><p class="muted">Qualification · focus</p></div>
@@ -257,7 +248,6 @@ summary h3,summary small{overflow-wrap:anywhere}
   <!-- ================= SERVICES (landing) ================= -->
   <div data-page="services">
     <section>
-      <div class="lbl">services landing — 8 categories, short descriptions, no sub-services</div>
       <h1>Our services</h1>
       <p class="lead">Eight practice areas, one integrated perspective.</p>
       <div class="grid g2" id="svcList"></div>
@@ -272,10 +262,9 @@ summary h3,summary small{overflow-wrap:anywhere}
         <nav class="side" id="side" aria-label="All services"></nav>
         <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
           <div class="field mSel">Switch service ▾</div>
-          <div class="lbl">service page — sticky list of all 8 on the left (desktop)</div>
           <h1 id="sdTitle"></h1>
           <p class="lead" id="sdLine"></p>
-          <div><span class="lbl">key offerings — + for scope</span><div class="offer" id="sdItems" style="margin-top:8px"></div></div>
+          <div><h2 style="font-size:1.05rem">Key offerings</h2><div class="offer" id="sdItems" style="margin-top:8px"></div></div>
           <div class="grid g2">
             <div class="card soft"><h3>Client requirements</h3><p class="muted">2–3 situations in the client's words.</p></div>
             <div class="card soft"><h3>Engagement approach</h3><p class="muted">Scope → plan → delivery → review.</p></div>
@@ -289,7 +278,6 @@ summary h3,summary small{overflow-wrap:anywhere}
   <!-- ================= INSIGHTS ================= -->
   <div data-page="insights">
     <section>
-      <div class="lbl">editorial list — date · title · category, scannable</div>
       <h1>Insights</h1>
       <div class="tabs"><span class="tab" aria-selected="true">All</span><span class="tab">Perspectives</span><span class="tab">Regulatory updates</span><span class="tab">Business finance</span><span class="tab">Governance</span></div>
       <div class="list">
@@ -305,7 +293,6 @@ summary h3,summary small{overflow-wrap:anywhere}
   <!-- ================= RESOURCES ================= -->
   <div data-page="resources">
     <section>
-      <div class="lbl">library — ▸ filter by type, card shows format</div>
       <h1>Resources</h1>
       <div class="seg" role="tablist" id="resTabs"><button role="tab" aria-selected="true" data-t="g">Guides</button><button role="tab" aria-selected="false" data-t="p">Publications</button><button role="tab" aria-selected="false" data-t="t">Tools</button></div>
       <div class="grid g3" id="resPanel"></div>
@@ -316,7 +303,6 @@ summary h3,summary small{overflow-wrap:anywhere}
   <!-- ================= CONTACT ================= -->
   <div data-page="contact">
     <section>
-      <div class="lbl">contact — ▸ one page, two modes</div>
       <h1>Let's discuss your business requirements</h1>
       <p class="lead">Whether you are strengthening financial management, evaluating an opportunity, restructuring your organisation or addressing a specific advisory need, we would be pleased to understand your objectives.</p>
       <div class="seg" role="tablist" id="cMode"><button role="tab" aria-selected="false" data-m="call">Book a call</button><button role="tab" aria-selected="true" data-m="form">Submit an enquiry</button></div>
@@ -330,7 +316,7 @@ summary h3,summary small{overflow-wrap:anywhere}
           <div class="w"><span class="btn p">Submit enquiry</span></div>
         </div>
         <div id="mCall" hidden style="display:flex;flex-direction:column;gap:10px">
-          <span class="lbl">embedded booking calendar (Google Calendar / Calendly)</span>
+          <span class="lbl">select a date</span>
           <div class="cal" id="cal"></div>
           <div class="slots"><span class="chip">10:00</span><span class="chip">11:30</span><span class="chip">15:00</span><span class="chip">16:30</span></div>
           <div><span class="btn p">Confirm 30-min call</span></div>
@@ -346,7 +332,6 @@ summary h3,summary small{overflow-wrap:anywhere}
   <!-- ================= LEGAL ================= -->
   <div data-page="privacy">
     <section class="legal">
-      <div class="lbl">footer page</div>
       <h1>Privacy Policy</h1>
       <p>Arthaarthee Private Limited respects the privacy of visitors to its website. This policy explains how we collect, use and protect personal information.</p>
       <details open><summary><h3>Information we collect</h3></summary><div class="dbody"><p>Name, organisation, designation, email, contact number and enquiry details, plus technical usage information to maintain the site.</p></div></details>
@@ -358,7 +343,6 @@ summary h3,summary small{overflow-wrap:anywhere}
   </div>
   <div data-page="terms">
     <section class="legal">
-      <div class="lbl">footer page</div>
       <h1>Terms of Use</h1>
       <p>This website is owned and operated by Arthaarthee Private Limited. By using it, you agree to these terms.</p>
       <details open><summary><h3>General information only</h3></summary><div class="dbody"><p>Content is not professional advice or an offer to undertake work. Engagements are governed by a separately agreed scope and terms.</p></div></details>
