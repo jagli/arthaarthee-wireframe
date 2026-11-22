@@ -171,6 +171,8 @@ summary h3,summary small{overflow-wrap:anywhere}
   .hdr-ctas .keep{display:inline-block!important;padding:7px 12px}
   .split2,.index,.paths,.offer{grid-template-columns:1fr}
   .list .item{grid-template-columns:1fr;gap:4px}
+  .triad button{flex-direction:column;gap:2px}
+  .seg{display:flex}.seg button{flex:1;text-align:center}
   .band{padding:28px clamp(16px,4vw,32px)}
 }
 </style>
@@ -270,7 +272,7 @@ summary h3,summary small{overflow-wrap:anywhere}
       <div class="svcLayout">
         <nav class="side" id="side" aria-label="All services"></nav>
         <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
-          <div class="field mSel">Switch service ▾</div>
+          <select class="field mSel" id="mSel" aria-label="Switch service" style="width:100%;background:var(--paper);color:var(--ink);font:inherit;font-size:14px"></select>
           <h1 id="sdTitle"></h1>
           <p class="lead" id="sdLine"></p>
           <div><h2 style="font-size:1.05rem;margin-bottom:6px">Scope</h2><p class="ph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p></div>
@@ -398,6 +400,8 @@ function triad(listId,panelId){const L=$(listId),P=$(panelId);
 triad('triad','triadPanel');triad('triad2','triadPanel2');
 $('homeIndex').innerHTML=SVC.map(([s,t,l,it],i)=>`<details><summary><span><span class="n">${pad(i+1)}</span><b>${t}</b></span></summary><div class="dbody"><ul>${it.map(x=>`<li>${x}</li>`).join('')}</ul><a href="#s-${s}">view service →</a></div></details>`).join('');
 $('svcList').innerHTML=SVC.map(([s,t,l],i)=>`<a class="card svc" href="#s-${s}" style="color:inherit;text-decoration:none"><span class="lbl">${pad(i+1)}</span><h3>${t}</h3><p class="muted">${l}</p></a>`).join('');
+$('mSel').innerHTML=SVC.map(([s,t],i)=>`<option value="${s}">${pad(i+1)} ${t}</option>`).join('');
+$('mSel').addEventListener('change',e=>{location.hash='s-'+e.target.value});
 $('side').innerHTML=SVC.map(([s,t],i)=>`<a href="#s-${s}" data-s="${s}">${pad(i+1)} ${t}</a>`).join('');
 const RES={g:["Guide title","Guide title","Guide title"],p:["Publication title","Publication title","Publication title"],t:["Compliance calendar","Tool name","Tool name"]};
 function res(k){$('resPanel').innerHTML=RES[k].map(x=>`<div class="card soft"><span class="lbl">${k=='t'?'tool':k=='p'?'pdf':'guide'}</span><h3>${x}</h3><span class="muted" style="font-size:13px">one-line description</span></div>`).join('');$('resTabs').querySelectorAll('button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===k))}
@@ -408,7 +412,7 @@ $('cMode').addEventListener('click',e=>{const b=e.target.closest('button');if(b)
 function showService(slug){const i=SVC.findIndex(s=>s[0]===slug);if(i<0)return false;const[s,t,l,items]=SVC[i];
  $('sdCrumb').textContent=t;$('sdTitle').textContent=t;$('sdLine').textContent=l;
  $('sdItems').innerHTML=items.map(x=>`<details style="margin:0"><summary><h3>${x}</h3></summary><div class="dbody">${LOREM}</div></details>`).join('');
- $('side').querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.s===s));return true}
+ $('side').querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.s===s));$('mSel').value=s;return true}
 const pages=['home','about','services','insights','resources','contact','privacy','terms'];
 function route(){const h=location.hash.slice(1);let cur='home';
  if(h.startsWith('s-')&&showService(h.slice(2)))cur='service';
